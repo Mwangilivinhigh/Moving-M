@@ -1,0 +1,51 @@
+
+
+
+# 1. DEFINING A CLASS
+
+class Student:
+    # 2. CONSTRUCTOR (__init__)
+    def __init__(self, name, age):
+        print(f"[Constructor] Creating a new student: {name}")
+        self.name = name   
+        self.age = age
+        self.is_active = True
+    def introduce(self):
+        if self.is_active:
+            print(f"Hello, I am {self.name} and I am {self.age} years old.")
+        else:
+            print(f"{self.name} is no longer an active student.")
+
+    def graduate(self):
+        print(f"{self.name} has graduated!")
+        self.is_active = False
+    
+# 4. DESTRUCTOR (__del__)
+    
+   
+    def __del__(self):
+        print(f"[Destructor] Object for {self.name} is being destroyed/cleaned up.")
+# MAIN PROGRAM EXECUTION
+
+if __name__ == "__main__":
+    print("--- Starting Lesson 1 Demo ---\n")
+
+    # CREATING OBJECTS 
+    
+    student1 = Student("Alice", 20)
+    student2 = Student("Brian", 22)
+
+    print("\n--- Using Object Methods ---")
+    # Accessing methods and attributes 
+    student1.introduce()
+    student2.introduce()
+
+    print("\n--- Modifying Object State ---")
+    student1.graduate()
+    student1.introduce() 
+
+    print("\n--- Deleting Objects ---")
+    del student1
+    
+    print("\n--- End of Program ---")
+    
